@@ -1,13 +1,13 @@
 .body {
-  background-color: rgb(6, 6, 34);
+  background-color: rgb(255, 255, 255);
 }
 
 .containerForm {
-  background-color: rgb(58, 34, 102);
-  border: 2px solid rgb(124, 66, 186);
+  background-color: rgb(102, 50, 34);
+  border: 2px solid rgb(186, 104, 66);
   color: #fff;
   padding: 10px;
-  width: 30%;
+  width: 50%;
   margin: 50px auto;
   display: flex;
   justify-content: center;
@@ -21,7 +21,11 @@
   width: 100%;
   margin: 5px;
   border-radius: 10px;
-  border: 2px solid rgb(124, 66, 186);
+  border: 2px solid rgb(186, 144, 66);
+}
+
+a {
+ text-decoration: none;
 }
 
 button {
@@ -51,7 +55,7 @@ input {
   align-items: center;
 }
 .logo {
-  background-color: rgb(124, 66, 186);
+  background-color: rgb(230, 151, 120);
   color: #fff;
   padding: 7px;
   border-radius: 25px;
@@ -71,17 +75,13 @@ input {
 .containerCard {
   display: flex;
   flex-wrap: wrap;
-  /* margin-left: 20px; */
   justify-content: center;
 }
 
 .containerProductos {
   display: flex;
 }
-/* .containerForm{
-    width: 80%;
-    margin: 30px;
-} */
+
 .tituloInputs {
   background-color: #777;
   color: #fff;
