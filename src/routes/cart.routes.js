@@ -1,9 +1,11 @@
 import { Router } from "express";
-import {getCarts, createNewCart, addThisProductToCart, deleteThisProduct, deleteCart} from "../controller/carts.controller.js";
+import {getCarts, createNewCart, addThisProductToCart, deleteThisProduct, completePurchase, deleteCart} from "../controller/carts.controller.js";
 
 const router = Router();
 
 router.get('/', (req, res) => {getCarts})
+
+router.get('/:cid/purchase', (req, res) => {completePurchase})
 
 router.post('/', (req, res) => {createNewCart})
 

@@ -2,8 +2,24 @@ import { cartsService } from "../dao/repositories/index.js";
 
 async function getCarts(req,res){
     try{
-        const cart = await cartsService.getCart()
+        const cart = await cartsService.getCarts()
         res.send(cart)
+    }
+    catch (err){
+        res.status(500).send(err.message)
+    }
+};
+
+
+async function completePurchase(req,res){
+    try{
+        const cart = await cartsService.getCarts()
+        if (condition) {
+            
+        } else {
+            
+        }
+
     }
     catch (err){
         res.status(500).send(err.message)
@@ -61,4 +77,4 @@ async function deleteCart(req,res){
     }
 };
 
-export{getCarts, createNewCart, addThisProductToCart, deleteThisProduct, deleteCart}
+export{getCarts, createNewCart, addThisProductToCart, completePurchase, deleteThisProduct, deleteCart}
