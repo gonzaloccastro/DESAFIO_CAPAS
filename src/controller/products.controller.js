@@ -1,13 +1,11 @@
-import ManagerMongoDb from "../dao/ManagerMongoDb.js";
-
-const productManger = new ManagerMongoDb.ProductManger(); 
+import { productsService } from "../dao/repositories/index.js";
 
 async function getAllProducts(req,res) {
     const {limit, page, sort, query} = req.query
     let queryList = {limit, page, sort, query}
     
     try{
-        const products = await productManger.getProduct(queryList);
+        const products = await productsService.getProduct(queryList);
         res.send({status: 'success', products})
     }
     catch (err){
@@ -20,7 +18,7 @@ async function createNewProduct(req,res){
         ...req.body,
         };
         try {
-        const response = await productManger.createProduct(newProduct);
+        const response = await productsService.createProduct(newProduct);
         res.send(response);
         } catch (err) {
         res.status(500).send(err.message);
@@ -31,7 +29,7 @@ async function modifyProduct(req,res){
     const {id} = req.params;
     const product = req.body;
     try{
-        const response = await productManger.updateProduct(id, product);
+        const response = await productsService.updateProduct(id, product);
         res.send(response); 
     }
     catch (err) {
@@ -43,7 +41,7 @@ async function modifyProduct(req,res){
 async function deleteProduct (req,res){
     const {id} = req.params;
     try{
-        const response = await productManger.deleteProduct(id);
+        const response = await productsService.deleteProduct(id);
         res.send({
             message: 'Product deleted successfully',
             id: id

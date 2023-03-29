@@ -1,5 +1,5 @@
-import { productModel } from "../models/product.model.js";
-import { cartModel } from "../models/cart.model.js";
+import { productModel } from "./models/product.model.js";
+import { cartModel } from "./models/cart.model.js";
 
 class ProductManger {
   async getProduct(queryList) {

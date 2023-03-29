@@ -1,5 +1,8 @@
 import ManagerMongoDb from "../dao/ManagerMongoDb.js";
 import registroModel from "../models/registro.model.js";
+import { registroService } from "../dao/repositories/index.js";
+
+
 
 async function login(req,res){
     if(!req.user) return res.status(400).send({status: 'error', error: 'Usuario no encontrado'});
