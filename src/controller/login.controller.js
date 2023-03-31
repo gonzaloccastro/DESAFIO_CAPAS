@@ -1,6 +1,4 @@
-import ManagerMongoDb from "../dao/ManagerMongoDb.js";
-import registroModel from "../models/registro.model.js";
-import { registroService } from "../dao/repositories/index.js";
+import registroModel from "../dao/mongo/models/registro.model.js";
 
 
 

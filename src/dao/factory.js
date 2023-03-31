@@ -8,13 +8,13 @@ switch (config.persistence) {
   case "MONGO":
     const connection = mongoose.connect(config.mongoUrl);
     const { default: CartsMongo } = await import(
-      "./mongo/ManagerMongoDB.js"
+      "../dao/mongo/ManagerMongoDB.js"
     );
     const { default: ProductsMongo } = await import(
-        "./mongo/ManagerMongoDB.js"
+      "../dao/mongo/ManagerMongoDB.js"
     );
     const { default: RegistroMongo } = await import(
-        "./mongo/ManagerMongoDB.js"
+        "../dao/mongo/ManagerMongoDB.js"
     );
     Registros = RegistroMongo;
     Carts = CartsMongo;
