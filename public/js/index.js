@@ -31,7 +31,6 @@ elementExists("signup") &&
   });
 
 // -------------------------------------------LOGIN ----------------------------------------------------
-
 const handleLogin = async (email, password) => {
   const config = {
     method: "POST",
@@ -42,6 +41,7 @@ const handleLogin = async (email, password) => {
   };
   try {
     const response = await fetch(`/api/login/user`, config);
+    console.log(response);
     const data = await response.json();
     console.log(data);
     return data.message;
@@ -50,6 +50,24 @@ const handleLogin = async (email, password) => {
   }
 };
 
+/*
+const handleLogin = function (email, password){
+  const config = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, password }),
+  };
+    const response = fetch(`/api/login/user`, config);
+    console.log(response);
+    const data = response.json();
+    console.log(data);
+    return data.message;
+
+};
+*/
+/*
 elementExists("send") &&
   document.getElementById("send").addEventListener("click", 
   
@@ -60,8 +78,10 @@ elementExists("send") &&
       await handleLogin(email, password)
       .then((data) => {
         if (data === "success") {
-        window.location.href = "/api/login/products";
-        } else {
+
+       window.location.href = "/api/login/products";
+        
+      } else {
         console.log()
         alert("Usuario o contraseña incorrecta");
         }
@@ -70,21 +90,20 @@ elementExists("send") &&
       console.log(error)
     }
 });
+*/
 
-
-/*
 elementExists("send") &&
-  document.getElementById("send").addEventListener("click", function () {
+  document.getElementById("send").addEventListener("click", async () => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    handleLogin(email, password).then((data) => {
+    const data = await handleLogin(email, password);
       if (data === "success") {
         window.location.href = "/api/login/products";
       } else {
         alert("Usuario o contraseña incorrecta");
       }
-    });
-  });*/
+    
+  });
 
 elementExists("logout") &&
   document
